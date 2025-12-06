@@ -1,0 +1,96 @@
+/*
+ * ROFI color theme
+ *
+ * Based on Something Found in the Internet
+ *
+ * User: Contributors
+ * Copyright: *!
+ */
+
+@import "~/.cache/wal/colors-sway.rasi"
+
+configuration {
+  font: "Iosevka Nerd Font Medium 12";
+
+  drun {
+    display-name: "◎[▪‿▪]◎";
+  }
+
+  run {
+    display-name: "⊂•⊃_⊂•⊃";
+  }
+
+  window {
+    display-name: "ᕙ(⇀‸↼‶)ᕗ";
+  }
+
+  timeout {
+    delay: 10;
+    action: "kb-cancel";
+  }
+}
+
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+
+/* PIWAL COLORS */
+
+  bg: #0b0d1f;
+  fg: #c3bbcc;
+
+  blue: #586293;
+  purple: #796fa1;
+  pink: #c7798f;
+
+  background-color: @bg;
+  text-color: @purple;
+}
+
+window {
+  transparency: "real";
+  width: 400px;
+  height: 300px;
+  
+  border: 1px;
+  border-color: @blue;
+  border-radius: 6px; 
+}
+
+mainbox {
+  children: [inputbar, listview];
+}
+
+inputbar {
+  children: [prompt, entry];
+}
+
+entry {
+  padding: 12px 0;
+  placeholder: "Search...";
+}
+
+prompt {
+  padding: 12px;
+}
+
+listview {
+  lines: 8;
+}
+
+element {
+  children: [element-text];
+}
+
+element-text {
+  padding: 12px;
+  text-color: @fg;
+}
+
+element-text selected {
+  text-color: @pink;
+}
+
+

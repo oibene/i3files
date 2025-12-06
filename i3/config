@@ -8,8 +8,9 @@ set $smod                           Shift
 
 
 font pango:Source Sans Pro, Semibold 11
-exec_always polybar
 
+exec_always wal -i ~/files/themes/wall
+exec_always --no--startup-id ~/.config/polybar/launch.sh &
 exec_always "setxkbmap -model pc104 -layout us,br -variant ,, -option grp:alt_shift_toggle"
 
 ### Applications ###
@@ -22,6 +23,9 @@ bindsym $mod+$smod+Return	exec brave
 # Start a program launcher
 bindsym $mod+d			exec rofi -show drun
 
+# Take a screenshot
+bindsym Print			exec maim -s | xclip -selection clipboard -t image/png
+
 ### AUDIO CONFIG ###
 
 bindsym XF86AudioRaiseVolume	exec --no-startup-id "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%"
@@ -32,10 +36,6 @@ bindsym XF86AudioMute		exec --no-startup-id pactl set-sink-mute 0 toggle
 
 bindsym XF86MonBrightnessUp	exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown	exec --no-startup-id brightnessctl set 5%-
-
-# Special key to take a screenshot with grim
-bindsym $mod+s exec "maim -s | xclip -selection clipboard -t image/png"
-
 
 ### Workspaces ###
 # Define names for default workspaces for which we configure key bindings later on.
@@ -155,3 +155,5 @@ bindsym $mod+$smod+r restart
 
 # Exit i3 (logs you out of your X session)
 bindsym $mod+$smod+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+
