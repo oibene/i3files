@@ -38,13 +38,14 @@ configuration {
 
 /* PIWAL COLORS */
 
-  bg: #0f1213;
-  bg-alt: #546973;
-  fg: #ccdce4;
-  fg-alt: #9C7863;
+  background: #0b0d1f;
+  foreground: #c3bbcc;
+  blue: #586293;
+  purple: #796fa1;
+  pink: #c7798f;
 
-  background-color: @bg;
-  text-color: @fg;
+  background-color: @background;
+  text-color: @blue;
 }
 
 window {
@@ -53,7 +54,7 @@ window {
   height: 300px;
   
   border: 1px;
-  border-color: @fg;
+  border-color: @purple;
   border-radius: 6px; 
 }
 
@@ -84,11 +85,11 @@ element {
 
 element-text {
   padding: 12px;
-  text-color: @fg-alt;
+  text-color: @foreground;
 }
 
 element-text selected {
-  text-color: @fg;
+  text-color: @pink;
 }
 
 
